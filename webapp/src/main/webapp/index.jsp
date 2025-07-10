@@ -38,5 +38,5 @@
    <h1> Thankyou, Happy learning </h1>
 
 <br>
-<h1>Test update</h1>  
+<h1>Test update for white belts</h1>  
 </form>
