@@ -3,13 +3,11 @@
     <h1>New user Register for DevOps Learning</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
-<br>
-<h1>Jesus ama voce!!!</h1>
 <br>     
     <label for="Name"><b>Enter Name</b></label>
     <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
     <br>
-<br>    
+    
     <label for="mobile"><b>Enter mobile</b></label>
     <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
     <br>
@@ -34,6 +32,6 @@
   </div>
 
    <h1> Thankyou, Happy Learning </h1>
-<br>
-<h1>Stela, eu te amo</h1>  
+
+  
 </form>
