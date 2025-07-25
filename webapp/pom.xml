@@ -1,8 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+  <!-- Metadados básicos -->
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- Herda dependências e versionamento do projeto‑pai -->
   <parent>
     <groupId>com.example.maven-project</groupId>
     <artifactId>maven-project</artifactId>
@@ -10,24 +13,37 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
+  <!-- Identificação do módulo -->
   <artifactId>webapp</artifactId>
   <packaging>war</packaging>
   <name>Webapp</name>
-  <description>Webapp.</description>
+  <description>Modulo web da aplicação.</description>
 
+  <!-- Configurações de build -->
   <build>
     <finalName>${project.artifactId}</finalName>
 
     <plugins>
+      <!-- Executar a aplicação localmente, se desejar -->
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
       </plugin>
+
+      <!-- Plugin que empacota o WAR (ESSENCIAL) -->
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+        <configuration>
+          <!-- Permite gerar WAR mesmo sem web.xml (Servlet 3+) -->
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
+  <!-- Dependências fornecidas pelo contêiner (Tomcat/Jetty, etc.) -->
   <dependencies>
-
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
@@ -42,3 +58,4 @@
   </dependencies>
 
 </project>
+
